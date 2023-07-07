@@ -20,7 +20,7 @@ class _AddScreenState extends ConsumerState<AddScreen> {
     if (_formkey.currentState!.validate()) {
       _formkey.currentState!.save();
 
-      ref.watch(placeInfoProvider.notifier).addPlace(Lists.name, enteredName);
+      ref.watch(placeInfoProvider.notifier).addPlace(enteredName);
       Navigator.of(context).pop();
     }
   }
