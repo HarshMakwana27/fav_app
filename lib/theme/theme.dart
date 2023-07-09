@@ -27,7 +27,7 @@ final kDarkColorScheme = ColorScheme(
   onError: Colors.black,
   onBackground: Colors.white,
   onSurface: Colors.white,
-  background: const Color.fromARGB(255, 31, 27, 27),
+  background: Color.fromARGB(255, 0, 0, 0),
   surface: Colors.black,
 );
 
@@ -41,10 +41,11 @@ final theme = ThemeData().copyWith(
 );
 
 final darkTheme = ThemeData().copyWith(
-    useMaterial3: true,
-    scaffoldBackgroundColor: Colors.black,
-    colorScheme: kDarkColorScheme,
-    textTheme: GoogleFonts.poppinsTextTheme().copyWith(
-      titleMedium: const TextStyle(color: Colors.white),
-    ),
-    appBarTheme: AppBarTheme(backgroundColor: kDarkColorScheme.primary));
+  useMaterial3: true,
+  scaffoldBackgroundColor: Colors.black,
+  colorScheme: kDarkColorScheme,
+  textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+    titleMedium: const TextStyle(color: Colors.white),
+  ),
+  appBarTheme: AppBarTheme(backgroundColor: kDarkColorScheme.background),
+);

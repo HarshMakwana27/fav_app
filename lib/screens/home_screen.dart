@@ -13,9 +13,12 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         title: Text(
           "Favourite places",
-          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                color: Theme.of(context).colorScheme.onBackground,
+              ),
         ),
         actions: [
           IconButton(
@@ -26,7 +29,7 @@ class HomeScreen extends ConsumerWidget {
             icon: const Icon(Icons.add),
           ),
         ],
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        //backgroundColor: Colors.purple,
       ),
       body: x.isEmpty
           ? const Center(
@@ -35,6 +38,7 @@ class HomeScreen extends ConsumerWidget {
           : ListView.builder(
               itemCount: x.length,
               itemBuilder: ((ctx, index) => ListTile(
+                    leading: Icon(Icons.circle_outlined),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (ctx) =>
@@ -43,18 +47,21 @@ class HomeScreen extends ConsumerWidget {
                     tileColor: Theme.of(context)
                         .colorScheme
                         .background
-                        .withOpacity(0.5),
+                        .withOpacity(0.4),
                     title: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 20, horizontal: 5),
+                          vertical: 13, horizontal: 0),
                       child: Text(
                         x.elementAt(index).name,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Theme.of(context).colorScheme.onBackground),
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                color:
+                                    Theme.of(context).colorScheme.onBackground),
                       ),
                     ),
                   )),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
             ),
       // bottomNavigationBar:
       //     BottomNavigationBar(items: const <BottomNavigationBarItem>[
