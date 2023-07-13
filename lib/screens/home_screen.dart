@@ -38,27 +38,30 @@ class HomeScreen extends ConsumerWidget {
           : ListView.builder(
               itemCount: x.length,
               itemBuilder: ((ctx, index) => ListTile(
-                    leading: Icon(Icons.circle_outlined),
+                    leading: CircleAvatar(
+                      radius: 26,
+                      backgroundImage: FileImage(x[index].image),
+                    ),
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (ctx) =>
-                              PlaceInfoScren(x.elementAt(index))));
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (ctx) => PlaceInfoScren(
+                            x.elementAt(index),
+                          ),
+                        ),
+                      );
                     },
-                    tileColor: Theme.of(context)
-                        .colorScheme
-                        .background
-                        .withOpacity(0.4),
+                    // tileColor: Theme.of(context)
+                    //     .colorScheme
+                    //     .background
+                    //     .withOpacity(0.4),
                     title: Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 13, horizontal: 0),
                       child: Text(
                         x.elementAt(index).name,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(
-                                color:
-                                    Theme.of(context).colorScheme.onBackground),
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            color: Theme.of(context).colorScheme.onBackground),
                       ),
                     ),
                   )),

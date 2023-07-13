@@ -12,6 +12,12 @@ class PlaceInfoScren extends StatelessWidget {
       appBar: AppBar(
         title: Text(place.name),
       ),
+      body: Center(
+          child: Image.file(
+        place.image,
+        width: double.infinity,
+        height: double.infinity,
+      )),
     );
   }
 }
