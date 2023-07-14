@@ -38,8 +38,9 @@ class ImageTakerState extends State<ImageTaker> {
       width: double.infinity,
       height: 200,
       decoration: BoxDecoration(
-          border: Border.all(
-              width: 1, color: Theme.of(context).colorScheme.onBackground)),
+        border: Border.all(
+            width: 1, color: Theme.of(context).colorScheme.onBackground),
+      ),
       child: _selectedImage == null
           ? TextButton.icon(
               onPressed: _takePicture,

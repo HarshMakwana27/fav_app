@@ -78,7 +78,7 @@ class _AddScreenState extends ConsumerState<AddScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const LocationPicker(),
+                // const LocationPicker(),
                 const SizedBox(
                   height: 20,
                 ),
